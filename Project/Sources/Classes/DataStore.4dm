@@ -1,7 +1,6 @@
 Class extends DataStoreImplementation
 
 exposed Function authentify($login : Text; $psw : Text) : Boolean
-	TRACE:C157
 	var $users : cs:C1710.UserSelection
 	var $user : cs:C1710.UserEntity
 	
@@ -16,9 +15,11 @@ exposed Function authentify($login : Text; $psw : Text) : Boolean
 			End use 
 			Web Form:C1735.setMessage("Login successfull")
 		Else 
+			Web Form:C1735.setMessage("Unknown User")
 			throw:C1805({message: "Unknown User"})
 		End if 
 	Else 
+		Web Form:C1735.setMessage("Unknown User")
 		throw:C1805({message: "Unknown User"})
 	End if 
 	
@@ -131,7 +132,6 @@ exposed Function inputSelectBox($name1 : Text; $name2 : Text)
 	
 exposed Function getCurrentUser()->$user : cs:C1710.UserEntity
 	var $success : Boolean
-	TRACE:C157
 	If (Session:C1714.storage.clientInfo#Null:C1517) && (Session:C1714.storage.clientInfo.UUID#Null:C1517)
 		$user:=ds:C1482.User.get(Session:C1714.storage.clientInfo.UUID)
 	End if 
