@@ -11,7 +11,7 @@ exposed Function authentify($login : Text; $psw : Text) : Boolean
 		$user:=$users.first()
 		
 		If (Verify password hash:C1534($psw; String:C10($user.password)))
-			Session:C1714.setPrivileges(String:C10($user.role))
+			Session:C1714.setPrivileges(["login"; "administrator"])
 			Use (Session:C1714.storage)
 				Session:C1714.storage.clientInfo:=New shared object:C1526("UUID"; $user.ID)
 			End use 
