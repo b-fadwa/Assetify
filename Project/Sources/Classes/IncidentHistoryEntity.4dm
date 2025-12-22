@@ -29,8 +29,6 @@ exposed Function saveIncident($importanceLevel : Text)
 	For each ($reporter; $users)
 		If ($reporter.ID#This:C1470.reporter.ID)
 			ds:C1482.Notification.generateNotification("incident"; $reporter; $currentUser; This:C1470)
-			// $mail = cs.Mail.new()
-			// $mail.setReminder($reporter; this) 
 		End if 
 	End for each 
 	ds:C1482.Notification.generateNotification("incident"; $currentUser; $currentUser; This:C1470)
