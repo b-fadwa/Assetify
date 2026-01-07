@@ -2,7 +2,7 @@
 
 This demo app is built with **4D Qodly Pro** and is meant to inspire you or help you kickstart your own IT asset management project.
 
-## Purpose
+## Purpose of the application
 
 The **Assetify Application** centralizes IT operations into a single, intuitive system.  
 It helps teams manage IT assets, software licenses, incidents, and users while ensuring clear role-based access for staff.
@@ -49,10 +49,10 @@ It helps teams manage IT assets, software licenses, incidents, and users while e
 
 ### Do I need to create external accounts?
 - **Mailing (optional)**: Required only if you want email notifications (incident updates, alerts).  
-  Assetify supports sending emails via **SMTP-compatible services** such as **SendGrid SMTP**.
+  Assetify supports sending emails via **SMTP-compatible services** such as **SendGrid SMTP** (see class **Mail**).
 
 ### Where does the app read credentials?
-- Credentials are inputted in the Setting page in the application.
+- Credentials are inputted in the Settings page in the application.
 
 
 ## Test Accounts and Sample Data  
@@ -60,35 +60,23 @@ It helps teams manage IT assets, software licenses, incidents, and users while e
 
 ## Where to Find the Code for Each Feature
 
+- **Generating data**
+  - Server: `InitData.4dm` — Generated random data for the application's dataclasses.
+  - UI: `home.WebForm`
+
 - **Authentication & Roles**
-  - Server: `DataStore.4dm` (authentication & session privileges)  
+  - Server: `DataStore.4dm` (authentication & session privileges) — Handles user authentication, sessions, and role-based access across the application.
   - UI: `login.WebForm` / `index.WebForm`
 
-- **Dashboard**
-  - UI: `dashboard.WebForm`  
-  - Server/Data: `Type.4dm`,`status.4dm`,`IncidentHistory.4dm`,`Type.4dm`,`Datastore.4dm`..
+- **Custom UI components** used to enhance user experience, including:
+  - Calendar (in the calendar page)
 
-- **Asset Management**
-  - UI: `equipmentInventory.WebForm`,,`equipmentInventory.WebForm`  
-  - Server/Data: `Equipment.4dm`, `EquipmentEntity.4dm`, `UserEquipmentEntity.4dm`
+  - Charts (in the dashboard page)
 
-- **Software & License Management**
-  - UI: `softwareInventory.WebForm`  
-  - Server/Data: `EquipmentSoftware.4dm`, `License.4dm`
+  - Popover (in the startPage and other pages)
 
-- **Incident Management**
-  - UI: `incidentHistory.WebForm`  
-  - Server/Data: `IncidentHistory.4dm`, `IncidentHistoryEntity.4dm`
+  - Tree (in the startPage page)
 
-- **License Expiration Calendar**
-  - UI: `licenseInventory.WebForm`,`calendar.webform` 
-  - Server/Data: `License.4dm`, `LicenseEntity.4dm`
-
-- **User Management**
-  - UI: `userManagement.WebForm`  
-  - Server/Data: `User.4dm`, `Role.4dm`
-
-- **Settings**
-  - UI: `settings.WebForm`  
+  - Accordion and DatePicker (in the dashboard page and other pages)
 
 This structure allows you to easily customize, extend, or reuse the Assetify application as a foundation for your own IT operations solutions.
