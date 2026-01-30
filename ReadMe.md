@@ -82,4 +82,4 @@ It helps teams manage IT assets, software licenses, incidents, and users while e
 
   - Accordion and DatePicker (in the dashboard page and other pages)
 
-This structure allows you to easily customize, extend, or reuse the Assetify application as a foundation for your own IT operations solutions.
+This structure allows you to easily customize, extend, or reuse the Assetify application as a foundation for your own IT operations solutions. 
