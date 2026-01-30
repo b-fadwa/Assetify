@@ -2,7 +2,7 @@
 # Basic .gitattributes for a 4D repo.
 # ====================================================================
 
-#  * text=auto
+ * text=auto
 
 #  *.shtml -crlf
 
@@ -22,13 +22,21 @@
 *.svg               text                                diff=xml
 
 # Source files
-*.4DProject         text      linguist-language=4d    diff=json
-*.4DCatalog         text eol=lf      linguist-language=4d    diff=xml
-*.4DSettings        text      linguist-language=4d    diff=xml
-*.4DForm            text      linguist-language=4d    diff=json
-*.4dm               text      linguist-language=4d
-*.4lbp              text      linguist-language=4d    diff=xml
-*.4df               text      linguist-language=4d    diff=json
+*.4DProject     text linguist-language=4d diff=json
+# ====================================================================
+*.4DCatalog     text linguist-language=4d diff=xml
+
+*.4DSettings    text linguist-language=4d diff=xml
+# These files are text and should be normalized (Convert crlf => lf)
+*.4DForm        text linguist-language=4d diff=json
+#.gitattributes     text      linguist-language=gitattributes
+*.4dm           text linguist-language=4d
+#.gitignore         text
+*.4lbp          text linguist-language=4d diff=xml
+*.md                text
+*.4df           text linguist-language=4d diff=json
+*.ini               text
+*.4qs           text linguist-language=4d
 
 # ====================================================================
 # Binary
